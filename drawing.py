@@ -2,6 +2,10 @@ import pyglet
 import graphicsdefs as graphdefs
 import spacemaths as smaths
 import celestialbody as celbd
+import pyogg
+import simpleaudio as sa
+import numpy as np
+import time
 from tkinter import *
 
 def init_pyglet(galaxy:celbd.Galaxy):
@@ -32,12 +36,26 @@ def init_pyglet(galaxy:celbd.Galaxy):
     for star_sprite in range(len(star_sprites)):
         index_sprite = star_sprites[star_sprite]
     
+    mouse_move_sound = pyglet.resource.media('sound/mouse_move_alt.ogg', streaming=False)
+
     @window.event
     def on_draw():
         window.clear()
         bg_image.blit(0,0)
         star_batch.draw()
         label.draw()
+    #@window.event
+    #def on_mouse_motion(x, y, dx, dy):
+        #mouse_move_sound.
+        #mouse_move_sound.play()
+        #time.sleep(0.5)
+        #sine = pyglet.media.synthesis.Triangle(0.5, frequency=440, sample_rate=44800)
+        #sine.play()
+        #adsr = pyglet.media.synthesis.ADSREnvelope(attack=0.05, decay=0.2, release=0.1)
+        #saw = pyglet.media.synthesis.Sine(duration=4, frequency=600, envelope=adsr)
+        #saw.play()
+        #time.sleep(5)
+
     pyglet.app.run()
 
 def blit_star(window, star:celbd.Star):
