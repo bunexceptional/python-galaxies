@@ -1,6 +1,8 @@
 import spacemaths as smaths
 import graphicsdefs as graphdefs
 
+possible_colours=[graphdefs.Colour3(247, 109, 22),graphdefs.Colour3(242, 196, 80),graphdefs.Colour3(164, 194, 245)]
+
 class Body:
     ''' Base class for all celestial bodies, though the values don't seem to carry over to inheriting classes '''
     def __init__(self, position:smaths.Vec2):
@@ -8,12 +10,13 @@ class Body:
 
 class Star(Body):
     ''' Stars inherit from Body, but contain a scale, index, colour, and name '''
-    def __init__(self, position:smaths.Vec2, colour:graphdefs.Colour3, scale:float, index:int, name:str):
+    def __init__(self, position:smaths.Vec2, colour:graphdefs.Colour3, scale:float, index:int, name:str, possible_colours=[graphdefs.Colour3(247, 109, 22),graphdefs.Colour3(242, 196, 80),graphdefs.Colour3(130, 176, 255)]):
         self.position = position
         self.colour = colour
         self.scale = scale
         self.index = index
         self.name = name
+        self.possible_colours = possible_colours
 
 class Galaxy:
     ''' Galaxies define the star count and contain a list of every star '''

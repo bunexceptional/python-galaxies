@@ -4,7 +4,7 @@
 
 class Colour3: 
     ''' Defines an RGB colour '''
-    def __init__(self, red:bytes, green:bytes, blue:bytes):
+    def __init__(self, red:int, green:int, blue:int):
         self.red = red
         self.green = green
         self.blue = blue
@@ -13,6 +13,6 @@ class Colour3:
         return '%02x%02x%02x' % (self.red, self.green, self.blue)
 class Colour2: 
     ''' Defines an IA (intensity/alpha) colour '''
-    def __init__(self, intensity:bytes, alpha:bytes):
+    def __init__(self, intensity:int, alpha:int):
         self.intensity = intensity
         self.alpha = alpha 
