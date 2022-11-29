@@ -19,6 +19,9 @@ def init_pyglet(galaxy:celbd.Galaxy):
     bg_image = pyglet.resource.image("gfx/window_bg-01.png")
 
     star_image = pyglet.image.load("gfx/star-01.png")
+    star_image.anchor_x = star_image.width // 2
+    star_image.anchor_y = star_image.height // 2
+
     star_batch = pyglet.graphics.Batch()
     star_sprites = []
     star_labels = []
@@ -44,8 +47,8 @@ def init_pyglet(galaxy:celbd.Galaxy):
         bg_image.blit(0,0)
         star_batch.draw()
         label.draw()
-    #@window.event
-    #def on_mouse_motion(x, y, dx, dy):
+    @window.event
+    def on_mouse_motion(x, y, dx, dy):
         #mouse_move_sound.
         #mouse_move_sound.play()
         #time.sleep(0.5)
@@ -55,6 +58,17 @@ def init_pyglet(galaxy:celbd.Galaxy):
         #saw = pyglet.media.synthesis.Sine(duration=4, frequency=600, envelope=adsr)
         #saw.play()
         #time.sleep(5)
+        for star_sprite in range(len(star_sprites)):
+            index_sprite = star_sprites[star_sprite]
+            index_sprite.update(x=dx + index_sprite.x,y=dy + index_sprite.y)
+
+    #@window.event
+    #def on_mouse_scroll(x, y, scroll_x, scroll_y):
+        #scroll_level = 0; scroll_level += scroll_y
+        #for star_sprite in range(len(star_sprites)):
+            #index_sprite = star_sprites[star_sprite]
+            #index_sprite.update(scale=index_sprite.scale + scroll_level)
+            #print(str(scroll_y))
 
     pyglet.app.run()
 
