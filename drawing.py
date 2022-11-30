@@ -28,13 +28,12 @@ def init_pyglet(galaxy:celbd.Galaxy):
 
     for star in range(len(galaxy.star_list)):
         index_star = galaxy.star_list[star]
-        new_sprite = pyglet.sprite.Sprite(star_image, x=index_star.position.x, y=index_star.position.y, batch=star_batch, z=index_star.scale * 100)
+        new_sprite = pyglet.sprite.Sprite(star_image, x=index_star.position.x, y=index_star.position.y, batch=star_batch, z=index_star.index)
         new_sprite.update(scale=index_star.scale * 0.025)
         new_sprite.color = (index_star.colour.red, index_star.colour.green, index_star.colour.blue)
         star_sprites.append(new_sprite)
         #new_label = pyglet.text.Label(index_star.name, font_name='Verdana', font_size=6, x=index_star.position.x, y=index_star.position.y - 2, anchor_x='center', anchor_y='top', batch=star_batch)
         #star_labels.append(new_label)
-        
 
     for star_sprite in range(len(star_sprites)):
         index_sprite = star_sprites[star_sprite]

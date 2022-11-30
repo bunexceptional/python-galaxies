@@ -11,7 +11,7 @@ import colorsys
 
 def pop_galaxy(target: celbd.Galaxy):
         for i in range(target.star_count):
-            new_star = celbd.Star(position=smaths.Vec2(random.randint(0,956), random.randint(0,537)), colour=celbd.possible_colours[random.randint(0,len(celbd.possible_colours) - 1)], scale=random.uniform(0.5,2), index=i, name=wordlists.generate_word_from_syllables(3,6))
+            new_star = celbd.Star(position=smaths.Vec2(random.randint(0,956), random.randint(0,537)), colour=celbd.possible_colours[random.randint(0,len(celbd.possible_colours) - 1)], scale=random.uniform(0.5,2), index=i, name=wordlists.generate_word_from_syllables(3,6), parent_galaxy=target)
             target.star_list.append(new_star)
 
 def read_stars_from(galaxy: celbd.Galaxy):
