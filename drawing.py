@@ -60,7 +60,7 @@ def init_pyglet(galaxy:celbd.Galaxy):
         #time.sleep(5)
         for star_sprite in range(len(star_sprites)):
             index_sprite = star_sprites[star_sprite]
-            index_sprite.update(x=dx + index_sprite.x,y=dy + index_sprite.y)
+            #index_sprite.update(x=dx + index_sprite.x,y=dy + index_sprite.y)
 
     #@window.event
     #def on_mouse_scroll(x, y, scroll_x, scroll_y):
