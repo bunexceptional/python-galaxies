@@ -9,10 +9,13 @@ class Body:
         self.position = position
 
 class Galaxy:
-    ''' Galaxies define the star count and contain a list of every star '''
-    def __init__(self, star_count:int, star_list):
+    ''' Galaxies define the star count and contain a list of every star and nebula '''
+    def __init__(self, star_count:int, star_list, nebula_count:int, nebula_list, nebula_offshoot_list):
         self.star_count = star_count
         self.star_list = star_list
+        self.nebula_count = nebula_count
+        self.nebula_list = nebula_list
+        self.nebula_offshoot_list = nebula_offshoot_list
 
 class Star(Body):
     ''' Stars inherit from Body, but contain a scale, index, colour, and name '''
@@ -24,3 +27,16 @@ class Star(Body):
         self.index = index
         self.name = name
         self.possible_colours = possible_colours
+
+class Nebula(Body):
+    ''' Nebulae inherit from Body, similarly to stars, but have fewer new properties '''
+    def __init__(self, position:smaths.Vec2, scale:float, index:int):
+        self.position = position
+        self.scale = scale
+        self.index = index
+class NebulaOffshoot(Body):
+    ''' Nebulae inherit from Body, similarly to stars, but have fewer new properties '''
+    def __init__(self, position:smaths.Vec2, scale:float, index):
+        self.position = position
+        self.scale = scale
+        self.index = index
