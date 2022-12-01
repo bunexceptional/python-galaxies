@@ -28,11 +28,17 @@ This programme depends on:
 
 Without these dependencies, you will not be able to use this programme.
 
+## Current features
+* Running the programme creates a new galaxy and populates it with stars
+* Stars can contain data and be represented both graphically and textually
+* Clouds of nebulae generate in the galaxy
+* Pyglet is used to draw stars and nebulae as sprites on the background of a window
+
 ## Known issues & incomplete features
-* Gravity has no effect on generation, so stars are distributed randomly and the galaxy has no centre.
-* Stars are completely static. they do not move, rotate, change brightness/colour, etc. after they are generated.
-* Star colour is not based on size or lifetime like in real life.
-* Stars have no lifetime and new ones are not created after generating a galaxy.
+* Gravity has no effect on generation, so stars are distributed randomly and the galaxy has no centre
+* Stars are completely static. they do not move, rotate, change brightness/colour, etc. after they are generated
+* Star colour is not based on size or lifetime like in real life
+* Stars have no lifetime and new ones are not created after generating a galaxy
 * There has not yet been any succesful implementation of dynamic audio (sounds for hovering over stars, moving the mouse pointer, ambient background noise, etc.)
-* Star sprites are not labeled with their names because there is no way to store data in a sprite such as which star and label it corresponds to. (this is more a limitation of Pyglet than something this project can easily fix)
-* Nebulae do not accurately represent the varieties seen in real life and do not have colour variation.
+* Star sprites are not labeled with their names because there is no way to store data in a sprite such as which star and label it corresponds to (this is more a limitation of Pyglet than something this project can easily fix)
+* Nebulae do not accurately represent the varieties seen in real life and do not have colour variation
