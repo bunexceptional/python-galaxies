@@ -14,7 +14,7 @@ def pop_galaxy(target: celbd.Galaxy):
             nebula_cloud_position = smaths.Vec2(random.randint(0,1024), random.randint(0,720))
             new_nebula_root = celbd.Nebula(position=nebula_cloud_position, scale=random.uniform(0.5,3), index=i)
             target.nebula_list.append(new_nebula_root)
-            for new_nebula in range(random.randint(1,3)):
+            for new_nebula in range(random.randint(1,5)):
                 new_nebula_offshoot = celbd.NebulaOffshoot(position=smaths.Vec2(nebula_cloud_position.x + random.randint(-16,16), nebula_cloud_position.y + random.randint(-16,16)), scale=random.uniform(0.5,2), index=i+new_nebula)
                 target.nebula_list.append(new_nebula_offshoot)
 
@@ -30,7 +30,7 @@ def read_stars_from(galaxy: celbd.Galaxy):
         #drawing.draw_star(colour=index_star.colour, position=index_star.position, size=index_star.scale)
 
 def __main__():
-    galaxy = celbd.Galaxy(star_count=random.randint(100,1000), star_list=[], nebula_count=random.randint(40,100), nebula_list=[], nebula_offshoot_list=[])
+    galaxy = celbd.Galaxy(star_count=random.randint(250,1500), star_list=[], nebula_count=random.randint(40,80), nebula_list=[], nebula_offshoot_list=[])
 
     pop_galaxy(galaxy)
 
