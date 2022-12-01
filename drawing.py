@@ -5,7 +5,6 @@ import celestialbody as celbd
 import pyogg
 import simpleaudio as sa
 import numpy as np
-import time
 from tkinter import *
 
 def init_pyglet(galaxy:celbd.Galaxy):

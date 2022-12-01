@@ -4,10 +4,7 @@ import graphicsdefs as graphdefs
 import wordlists
 import drawing
 import random
-import pyglet
-import threading
 from tkinter import *
-import colorsys
 
 def pop_galaxy(target: celbd.Galaxy):
         for i in range(target.star_count):
