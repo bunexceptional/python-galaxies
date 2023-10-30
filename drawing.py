@@ -2,9 +2,6 @@ import pyglet
 import graphicsdefs as graphdefs
 import spacemaths as smaths
 import celestialbody as celbd
-import pyogg
-import simpleaudio as sa
-import numpy as np
 from tkinter import *
 
 def init_pyglet(galaxy:celbd.Galaxy):
@@ -52,8 +49,6 @@ def init_pyglet(galaxy:celbd.Galaxy):
 
     for star_sprite in range(len(star_sprites)):
         index_sprite = star_sprites[star_sprite]
-    
-    mouse_move_sound = pyglet.resource.media('sound/mouse_move_alt.ogg', streaming=False)
 
     @window.event
     def on_draw():
