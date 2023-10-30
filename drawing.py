@@ -89,7 +89,7 @@ def blit_star(window, star:celbd.Star):
         star_image.blit(star.position.x, star.position.y)
 
 
-#def draw_star(colour:graphdefs.Colour3, position:smaths.Vec2, size:float):
+#def draw_star(colour:graphdefs.Colour3, position:smaths.Point, size:float):
     # Turtle method (we don't use this because it's slow.)
     # t = Turtle()
     # t.color("#" + str(colour.convert_to_hex()))
